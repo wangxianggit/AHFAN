@@ -2,7 +2,7 @@ import argparse
 import torch
 import torch.optim as optim
 
-from model import AMNet
+from model import AHFAN
 from copy import deepcopy
 from config import *
 import pickle
@@ -41,8 +41,8 @@ def sample_mask(idx, l):
     
 # def dataset():
 # # 读取.mat文件
-#     #  data = scipy.io.loadmat('/home/hdou/model/first/AMNet/AMNet-main/dataset/Amazon.mat')
-#      data = scipy.io.loadmat('first/MC-AGCN/AMNet-main/dataset/YelpChi.mat')
+#     #  data = scipy.io.loadmat('/home/hdou/model/first/AHFAN/AHFAN-main/dataset/Amazon.mat')
+#      data = scipy.io.loadmat('first/MC-AGCN/AHFAN-main/dataset/YelpChi.mat')
 #      edge_all = from_scipy_sparse_matrix(data['homo'])
 #      edge_weight = edge_all[1]
 #      edge_index = edge_all[0]
@@ -56,7 +56,7 @@ def sample_mask(idx, l):
 #      return data_obj
 
 # def dataset():
-#      data = np.load('first/MC-AGCN/AMNet-main/dataset/tolokers.npz')
+#      data = np.load('first/MC-AGCN/AHFAN-main/dataset/tolokers.npz')
 #     #  data = np.load('second/sprectal-transformer/dataset/tolokers.npz')
 #      node_features = torch.tensor(data['node_features'])
 #      labels = torch.tensor(data['node_labels'])
@@ -76,14 +76,14 @@ def sample_mask(idx, l):
 def main(args, exp_num=0):
     # data = dataset().to(device)
     
-    # data = pickle.load(open('AMNet-main/dataset/elliptic.dat'.format(args.dataset), 'rb'))
+    # data = pickle.load(open('AHFAN-main/dataset/elliptic.dat'.format(args.dataset), 'rb'))
     # # # # data = Data(x=data1.x, y=data1.y,edge_index=data1.edge_index)
     # data = data.to(device)
     # # print('train_mask',sum(data.train_mask),'val_mask',sum(data.val_mask),'test_mask',sum(data.test_mask))
     # # print(sum(data.train_mask))
     # # data = load_data('reddit').to(device)    
     data = load_data('weibo').to(device)    
-    # data = torch.load('first/MC-AGCN/AMNet-main/dataset/weibo.pt').to(device)  
+    # data = torch.load('first/MC-AGCN/AHFAN-main/dataset/weibo.pt').to(device)  
     sample_number = len(data.y) 
     seed = 42
     shuffled_idx = shuffle(np.array(range(len(data.y))), random_state=seed) 
@@ -101,7 +101,7 @@ def main(args, exp_num=0):
     data.val_mask = val_mask.to(device)
     
     
-    net = AMNet(in_channels=data.x.shape[1],  hid_channels=params_config['hidden_channels'],num_class=2)
+    net = AHFAN(in_channels=data.x.shape[1],  hid_channels=params_config['hidden_channels'],num_class=2)
     
     net.to(device)
  
