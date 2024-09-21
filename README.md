@@ -19,7 +19,9 @@ torch-geometric=2.0.4
 
 Two public datasets Elliptic and Weibo of graph anomaly detection are available for evaluation. `Elliptic` was first proposed in [this paper](https://arxiv.org/pdf/2008.08692.pdf), of which goal is to detect money-laundering users in bitcoin network.
 ### Usage
+```
 python main.py --dataset weibo/elliptic
+```
 
 Tuned hyper-parameters could be found in `config.py`
 
