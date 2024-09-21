@@ -64,7 +64,7 @@ class AHFAN(nn.Module):
         
         # res = torch.cat((res,h1,x),dim=1)
         y_hat = self.linear_cls_out(h1)
-        marginal_loss = 0.
+        # marginal_loss = 0.
 
         # if self.training:
         #     anomaly_train, normal_train = label
