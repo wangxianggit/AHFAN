@@ -21,3 +21,8 @@ Three public datasets Elliptic, Weibo and Yelp of graph anomaly detection are av
 ### Usage
 python main.py --dataset weibo/yelp/elliptic
 
+Tuned hyper-parameters could be found in `config.py`
+
+### Run on your own dataset
+
+You could organize your dataset into a `torch_geometric.data.Data` then add profile of your own dataset on `config.py`
