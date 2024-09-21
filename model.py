@@ -7,9 +7,9 @@ import dgl.function as fn
 from torch_geometric.nn import AGNNConv,GCNConv,GATConv,GATv2Conv
 
 
-class AMNet(nn.Module):
+class AHFAN(nn.Module):
     def __init__(self, in_channels, hid_channels, num_class, dropout=0.5):
-        super(AMNet, self).__init__()
+        super(AHFAN, self).__init__()
         self.act_fn = nn.ReLU()
         self.attn_fn = nn.Tanh()
 
