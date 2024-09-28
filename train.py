@@ -131,7 +131,7 @@ def main(args, exp_num=0):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='yelp', help='Dataset [yelp, elliptic, weibo, quest, Amazon, ACM]')
+    parser.add_argument('--dataset', default='elliptic', help='Dataset [yelp, elliptic, weibo, quest, Amazon, ACM]')
     parser.add_argument('--exp_num', type=int, default=1,help='Default Experiment Number')
     parser.add_argument('--eval_interval', type=int, default=100)
     args = parser.parse_args(args=[])
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         'AUROC': auc_roc_list,
         'AUPRC': auc_pr_list
     })
-    df.to_excel('canshu/elliptic/sigma=0.1.xlsx', index=False)
+    #df.to_excel('canshu/elliptic/sigma=0.1.xlsx', index=False)
     # auc_df = pd.DataFrame(auc_roc_list, columns=['AUROC'])
     # pre_df = pd.DataFrame(auc_pr_list, columns=['AUPRC'])
 
