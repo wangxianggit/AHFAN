@@ -1,6 +1,6 @@
 ## AHFAN
 
-This project implements the paper "Graph Anomaly Detection Based on Hybrid Node Representation Learning" submitted to Neural Networks, which focuses on graph anomaly detection with GNNs addressing class inconsistency and semantic inconsistency.
+This project implements the paper "Graph Anomaly Detection Based on Hybrid Node Representation Learning" submitted to Neural Networks.
 
 
 ## Model Usage
