@@ -5,8 +5,7 @@ import torch.nn as nn
 from utils import aucPerformance
 import dgl.function as fn
 from torch_geometric.nn import AGNNConv,GCNConv,GATv2Conv
-from multi_head import MultiHeadAttention
-from gat import GATConv
+
 
 class AHFAN(nn.Module):
     def __init__(self, in_channels, hid_channels, num_class, dropout=0.5):
